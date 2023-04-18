@@ -1,0 +1,39 @@
+@import url('https://fonts.googleapis.com/css2?family=Rancho&display=swap');
+
+:root {
+  --bg-color: #E2F8F0;
+  --primary-color: #028585;
+  --secondary-color: #03BBB0;
+  --tertiary-color: #50DEBC;
+  --support-color: #D1F07A;
+}
+
+body {
+  font-family: 'Rancho', cursive, 'sans-serif';
+  background-color: var(--bg-color);
+  margin: 0 auto;
+  max-width: 1280px;
+}
+
+.little-triangle {
+  position: absolute;
+  left: 21.0625rem;
+  top: 0px;
+  clip-path: polygon(100% 0, 5.6875rem 100%, 0 0);
+  width: 26.4375rem;
+  height: 4.5rem;
+  background-color: var(--primary-color);
+}
+
+.big-triangle {
+  position: absolute;
+  width: 61.4375rem;
+  height: 14.8125rem;
+  left: 54.0625rem;
+  bottom: 0;
+  clip-path: polygon(15.5625rem 100%, 45.8125rem 0, 0 0);
+  transform: rotate(180deg);
+  
+  background-color: var(--primary-color);
+}
+

@@ -1,12 +1,18 @@
 import type { V2_MetaFunction } from "@remix-run/react";
+import shared from '../shared.css';
+
+export function links() {
+  return [{ rel: "stylesheet", href: shared }];
+}
 
 export const meta: V2_MetaFunction = () => {
-  return [{ title: "New Remix App" }];
+  return [{ title: "HGBPedro" }];
 };
 
 export default function Index() {
   return (
-    <div style={{ fontFamily: "system-ui, sans-serif", lineHeight: "1.4" }}>
+    <div>
+      <div className='little-triangle'/>
       <h1>Welcome to Remix</h1>
       <ul>
         <li>
@@ -33,6 +39,7 @@ export default function Index() {
           </a>
         </li>
       </ul>
+      <div className='big-triangle'/>
     </div>
   );
 }
