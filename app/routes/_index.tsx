@@ -31,20 +31,20 @@ export default function Index() {
       </div>
       <div id='#projects' className='projects'>
         <div className='projects__big-triangle'/>
-        <aside className='projects__grid-container'>
+        <div className='projects__grid-container'>
           <div className='projects__grid'>
             {Array(20).fill('').map(() => (
               <div className='projects__card'>
               </div>
             ))}
           </div>
-        </aside>
-        <div>
-          <h1>Projects</h1>
-          <span className='home-text'>
+        </div>
+        <div className='projects__text-container'>
+          <h1 className='projects__text-header'>Projects</h1>
+          <p className='projects__text-description'>
             Here’s a glimpse of some projects I developed on my own. Some are simple,&nbsp;
             others have some complexity and all the code can be checked at my <a href='https://github.com/HGBPedro?tab=repositories' target='_blank'>GitHub profile</a>.
-          </span>
+          </p>
         </div>
       </div>
     </main>
