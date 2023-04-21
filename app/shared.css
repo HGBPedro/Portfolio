@@ -96,8 +96,8 @@ h4 {
 
 .projects__grid {
   display: grid;
-  grid-template-columns: repeat(3, 18.75rem);
-  grid-template-rows: 23.4375rem;
+  grid-template-columns: repeat(4, 18.75rem);
+  grid-template-rows: repeat(3, 23.4375rem);
   grid-column-gap: 1.25rem;
   grid-row-gap: 1.25rem;
   overflow: hidden;
@@ -111,25 +111,66 @@ h4 {
 
 .projects__text-container {
   max-width: 43.125rem;
-  padding-right: 20rem;
+  padding-right: 15vw;
   position: absolute;
   right: 0;
   transform: translateY(65%);
 }
 
 .projects__text-header {
-  display: flex;
-  justify-content: center;
+  text-align: center;
 }
 
 .projects__text-description {
   color: var(--tertiary-color);
   font-size: 52px;
   margin: 0;
+  text-align: right;
 }
 
-.projects__text-description > a {
+.projects__text-description > a, .about__description > a {
   color: var(--primary-color);
+}
+
+.about {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  /* height: 100vh; */
+  height: calc(100vh - 6rem);
+}
+
+.about__content {
+  align-items: center;
+  display: flex;
+  gap: 2rem;
+  justify-content: space-between;
+  padding: 0 20vw;
+}
+
+.about__content h1 {
+  text-align: center;
+}
+
+.about__description {
+  color: var(--tertiary-color);
+  font-size: 35px;
+  text-align: justify;
+}
+
+.spacer {
+  aspect-ratio: 1920/100;
+  align-items: end;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  width: 100vw;
+  z-index: -1;
+}
+
+.waves {
+  background-image: url('../public/images/bottom-waves.svg');
 }
 
 @media screen and (max-width: 1366px) {
