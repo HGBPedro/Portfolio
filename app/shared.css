@@ -1,0 +1,206 @@
+@import url('https://fonts.googleapis.com/css2?family=Rancho&display=swap');
+
+:root {
+  --bg-color: #E2F8F0;
+  --primary-color: #028585;
+  --secondary-color: #03BBB0;
+  --tertiary-color: #50DEBC;
+  --support-color: #D1F07A;
+}
+
+body {
+  background-color: var(--bg-color);
+  font-family: 'Rancho', cursive, 'sans-serif';
+  scroll-behavior: smooth;
+  margin: 0;
+}
+
+h1 {
+  color: var(--primary-color);
+  font-size: 72px;
+  margin: 0
+}
+
+h4 {
+  color: var(--secondary-color);
+  font-size: 52px;
+  margin-bottom: 3.4375rem;
+  margin-top: 0;
+}
+
+.home-text, .home__link {
+  color: var(--tertiary-color);
+  font-size: 52px;
+}
+
+.home__little-triangle {
+  background-color: var(--primary-color);
+  clip-path: polygon(0% 0%, 100% 0%, 26.8% 100%);
+  height: 4.5rem;
+  left: 21.0625rem;
+  position: absolute;
+  width: 26.4375rem;
+  top: 0px;
+}
+
+.home__big-triangle {
+  background-color: var(--primary-color);
+  bottom: 0;
+  clip-path: polygon(0% 100%, 100% 100%, 72.02% 0%);
+  height: 14.8125rem;
+  position: absolute;
+  right: 4.5rem;
+  width: 61.4375rem;
+  z-index: -1;
+
+}
+
+.home {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  height: 100vh;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.home__link-container{
+  display: flex;
+  justify-content: space-evenly;
+  margin-top: 2.8125rem;
+}
+
+.projects {
+  display: flex;
+  height: 100vh;
+  margin: 0 auto;
+  position: relative;
+}
+
+.projects__big-triangle {
+  background-color: var(--primary-color);
+  clip-path: polygon(0% 0%, 100% 0%, 28.39% 100%);
+  height: 14.8125rem;
+  position: absolute;
+  right: 4.4375rem;
+  top: 0;
+  width: 61.4375rem;
+}
+
+.projects__grid-container {
+  box-shadow: inset 0px 8px 8px rgba(0, 0, 0, 0.5);
+  clip-path: polygon(0 0, 20% 0, 85.375rem 100%, 0% 100%);
+  height: 100%;
+  width: 85.375rem;
+}
+
+.projects__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 18.75rem);
+  grid-template-rows: repeat(3, 23.4375rem);
+  grid-column-gap: 1.25rem;
+  grid-row-gap: 1.25rem;
+  overflow: hidden;
+  transform: rotate(311deg);
+}
+
+.projects__card {
+  background: var(--secondary-color);
+  border-radius: 20px;
+}
+
+.projects__text-container {
+  max-width: 43.125rem;
+  padding-right: 15vw;
+  position: absolute;
+  right: 0;
+  transform: translateY(65%);
+}
+
+.projects__text-header {
+  text-align: center;
+}
+
+.projects__text-description {
+  color: var(--tertiary-color);
+  font-size: 52px;
+  margin: 0;
+  text-align: right;
+}
+
+.projects__text-description > a, .about__description > a {
+  color: var(--primary-color);
+}
+
+.about {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  /* height: 100vh; */
+  height: calc(100vh - 6rem);
+}
+
+.about__content {
+  align-items: center;
+  display: flex;
+  gap: 2rem;
+  justify-content: space-between;
+  padding: 0 20vw;
+}
+
+.about__content h1 {
+  text-align: center;
+}
+
+.about__description {
+  color: var(--tertiary-color);
+  font-size: 35px;
+  text-align: justify;
+}
+
+.spacer {
+  aspect-ratio: 1920/100;
+  align-items: end;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  width: 100vw;
+  z-index: -1;
+}
+
+.waves {
+  background-image: url('../public/images/bottom-waves.svg');
+}
+
+@media screen and (max-width: 1366px) {
+    .little-triangle {
+      background-color: var(--primary-color);
+      clip-path: polygon(100% 0, 5.6875rem 100%, 0 0);
+      height: 4.5rem;
+      left: 4.125rem;
+      position: absolute;
+      width: 26.4375rem;
+      top: 0px;
+    }
+    .big-triangle {
+      background-color: var(--primary-color);
+      bottom: 0;
+      clip-path: polygon(15.5625rem 100%, 45.8125rem 0, 0 0);
+      height: 14.8125rem;
+      position: absolute;
+      left: 36.8125rem;
+      transform: rotate(180deg);
+      width: 61.4375rem;
+      z-index: -1;
+    }
+    
+    .projects__text-container {
+      max-width: 43.125rem;
+      padding-right: 2.6875rem;
+      position: absolute;
+      right: 0;
+      transform: translateY(65%);
+    }
+  }
+

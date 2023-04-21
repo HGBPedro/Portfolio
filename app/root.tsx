@@ -6,6 +6,11 @@ import {
   Scripts,
   ScrollRestoration,
 } from "@remix-run/react";
+import shared from './shared.css';
+
+export function links() {
+  return [{ rel: "stylesheet", href: shared }];
+}
 
 export default function App() {
   return (
