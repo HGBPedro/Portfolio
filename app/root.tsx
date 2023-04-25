@@ -5,11 +5,17 @@ import {
   Outlet,
   Scripts,
   ScrollRestoration,
-} from "@remix-run/react";
-import shared from './shared.css';
+} from "@remix-run/react"
+import shared from './shared.css'
+import largeScreen from './styles/largeScreen.css'
+import normalScreen from './styles/normalScreen.css'
 
 export function links() {
-  return [{ rel: "stylesheet", href: shared }];
+  return [
+    { rel: "stylesheet", href: shared },
+    { rel: "stylesheet", href: largeScreen },
+    { rel: "stylesheet", href: normalScreen }
+  ];
 }
 
 export default function App() {
