@@ -1,21 +1,47 @@
-import type { V2_MetaFunction } from "@remix-run/react"
-import { Link } from "@remix-run/react"
+import type { V2_MetaFunction } from '@remix-run/react'
+import { useState, useEffect } from 'react'
+import { Link } from '@remix-run/react'
 import shared from '../shared.css'
 import Lottie from 'lottie-react'
 import Animation from 'public/animation.json'
-import { redirect } from "@remix-run/node"
-
-export function links() {
-  return [{ rel: "stylesheet", href: shared }];
-}
+import { redirect } from '@remix-run/node'
 
 export const meta: V2_MetaFunction = () => {
   return [{ title: "HGBPedro" }];
-};
+}
 
 export default function Index() {
+  const [showNav, setShowNav] = useState(false)
+  const [showItems, setShowItems] = useState(false)
+
+   useEffect(() => {
+    const handleScroll = () => {
+      if (window.pageYOffset > (window.innerHeight - 1)) setShowNav(true)
+      else setShowNav(false)
+    }
+    window.addEventListener("scroll", handleScroll)
+    return () => {
+      window.removeEventListener("scroll", handleScroll)
+    }
+  }, [])
+
+  useEffect(() => console.log(showItems), [showItems])
+
   return (
     <main>
+      {showNav && (
+        <nav className='menu'>
+          <img src='/images/MenuOutlined.svg' onClick={() => setShowItems(prev => !prev)}/>
+          {showItems && (
+            <ul>
+              <li><Link to='#home'>Home</Link></li>
+              <li><Link to='#projects'>Projects</Link></li>
+              <li><Link to='#about'>More info</Link></li>
+            </ul>
+          )}
+        </nav>
+      )}
+      
       <section id='#home' className='home'>
         <span className='home__little-triangle'/>
         <aside>

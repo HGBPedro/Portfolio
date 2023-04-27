@@ -9,12 +9,14 @@ import {
 import shared from './shared.css'
 import largeScreen from './styles/largeScreen.css'
 import normalScreen from './styles/normalScreen.css'
+import phoneScreen from './styles/phoneScreen.css'
 
 export function links() {
   return [
     { rel: "stylesheet", href: shared },
     { rel: "stylesheet", href: largeScreen },
-    { rel: "stylesheet", href: normalScreen }
+    { rel: "stylesheet", href: normalScreen },
+    { rel: "stylesheet", href: phoneScreen }
   ];
 }
 

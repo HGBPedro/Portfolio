@@ -41,6 +41,18 @@ h4 {
   margin-top: 0;
 }
 
+.menu {
+  left: 2.5rem;
+  width: 2.8125rem;
+  position: fixed;
+  top: 2.5rem;
+  z-index: 10;
+}
+
+.menu img {
+  cursor: pointer;
+}
+
 .home-text, .home__link {
   color: var(--tertiary-color);
   font-size: 52px;
