@@ -81,6 +81,14 @@
       transform: rotate(325deg);
     }
 
+    .projects__card {
+      background: var(--secondary-color);
+      border-radius: 20px;
+      height: 18.75rem;
+      object-fit: cover;
+      width: 12.5rem;
+    }
+
     .projects__text-container {
       max-width: 33.375rem;
       padding-right: 2.6875rem;

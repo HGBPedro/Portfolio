@@ -104,6 +104,14 @@
     transform: none;
   }
 
+  .projects__card {
+    background: var(--secondary-color);
+    border-radius: 20px;
+    height: 11.5625rem;
+    object-fit: cover;
+    width: 9.25rem;
+  }
+
   .projects__text-container {
     max-width: 16.25rem;
     padding-right: 0;

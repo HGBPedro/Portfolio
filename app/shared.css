@@ -16,9 +16,7 @@ html {
 body {
   background-color: var(--bg-color);
   font-family: 'Rancho', cursive, 'sans-serif';
-  scroll-behavior: smooth;
   margin: 0;
-  scroll-snap-align: start;
 }
 
 
@@ -47,10 +45,60 @@ h4 {
   position: fixed;
   top: 2.5rem;
   z-index: 10;
+  display: none;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.show-menu-button {
+  display: block;
+  opacity: 1;
 }
 
 .menu img {
   cursor: pointer;
+}
+
+.menu-list {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s ease-in-out;
+  width: 5rem;
+}
+
+.menu-list li {
+  animation: drop-down 0.5s ease-in-out forwards;
+  color: var(--primary-color);
+  font-size: 32px;
+  opacity: 0;
+  transform: translateY(-50px);
+}
+
+.menu-list li > a {
+  color: var(--primary-color);
+  /* text-decoration: none; */
+}
+
+.open-menu {
+   max-height: 200px;
+  transition: max-height 0.5s ease-in-out;
+}
+
+.open-menu li {
+  opacity: 1;
+  transform: translateY(0);
+  animation-name: drop-down;
+}
+
+@keyframes drop-down {
+  0% {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .home-text, .home__link {
@@ -123,7 +171,7 @@ h4 {
 
 .projects__grid {
   display: grid;
-  grid-template-columns: repeat(4, 18.75rem);
+  grid-template-columns: repeat(6, 18.75rem);
   grid-template-rows: repeat(5, 23.4375rem);
   grid-column-gap: 1.25rem;
   grid-row-gap: 1.25rem;
@@ -138,6 +186,9 @@ h4 {
 .projects__card {
   background: var(--secondary-color);
   border-radius: 20px;
+  height: 23.4375rem;
+  object-fit: cover;
+  width: 18.75rem;
 }
 
 .projects__text-container {

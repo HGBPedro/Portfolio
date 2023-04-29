@@ -91,6 +91,14 @@
       transform: rotate(312deg);
     }
 
+    .projects__card {
+      background: var(--secondary-color);
+      border-radius: 20px;
+      height: 18.75rem;
+      object-fit: cover;
+      width: 15rem;
+    }
+
     .projects__text-container {
       max-width: 30.8125rem;
       padding-right: 0;

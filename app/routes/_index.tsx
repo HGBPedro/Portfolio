@@ -5,14 +5,25 @@ import shared from '../shared.css'
 import Lottie from 'lottie-react'
 import Animation from 'public/animation.json'
 import { redirect } from '@remix-run/node'
+import linkShorter from 'public/images/linkshorter3000.svg'
+import recipeeBook from 'public/images/recipee-book.svg'
+import binaryToDecimal from 'public/images/binarytodecimal.svg'
+import liteXLPersonalConfig from 'public/images/lite-xl-personal-configs.svg'
 
 export const meta: V2_MetaFunction = () => {
-  return [{ title: "HGBPedro" }];
+  return [{ title: "HGBPedro" }]
 }
 
 export default function Index() {
   const [showNav, setShowNav] = useState(false)
   const [showItems, setShowItems] = useState(false)
+
+  const imagesList = [
+    linkShorter,
+    recipeeBook,
+    binaryToDecimal,
+    liteXLPersonalConfig
+  ]
 
    useEffect(() => {
     const handleScroll = () => {
@@ -25,22 +36,16 @@ export default function Index() {
     }
   }, [])
 
-  useEffect(() => console.log(showItems), [showItems])
-
   return (
     <main>
-      {showNav && (
-        <nav className='menu'>
+        <nav className={`menu ${showNav ? 'show-menu-button' : ''}`}>
           <img src='/images/MenuOutlined.svg' onClick={() => setShowItems(prev => !prev)}/>
-          {showItems && (
-            <ul>
-              <li><Link to='#home'>Home</Link></li>
-              <li><Link to='#projects'>Projects</Link></li>
-              <li><Link to='#about'>More info</Link></li>
-            </ul>
-          )}
+          <ul className={`menu-list ${showItems ? 'open-menu' : ''}`}>
+            <li><Link to='#home'>Home</Link></li>
+            <li><Link to='#projects'>Projects</Link></li>
+            <li><Link to='#about'>About</Link></li>
+          </ul>
         </nav>
-      )}
       
       <section id='#home' className='home'>
         <span className='home__little-triangle'/>
@@ -62,8 +67,7 @@ export default function Index() {
         <div className='projects__grid-container'>
           <div className='projects__grid'>
             {Array(30).fill('').map((_, idx) => (
-              <div key={idx} className='projects__card'>
-              </div>
+              <img key={idx} src={imagesList[idx % imagesList.length]} className='projects__card'/>
             ))}
           </div>
         </div>
