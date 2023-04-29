@@ -26,13 +26,10 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
-    - name: update npm
-      run:  npm install -g npm@latest
-
+  
     - name: install dependencies
       run: npm install
     
     - name: build app
       run: npm run build &&
-        remix build &&
         npm start
