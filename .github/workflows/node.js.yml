@@ -43,4 +43,4 @@ jobs:
       with:
         personal_token: ${{ secrets.PERSONAL_TOKEN }}
         publish_dir: ./out
-        external_repository: hgbpedro/hgbpedro.github.io
+        external_repository: HGBPedro/hgbpedro.github.io
