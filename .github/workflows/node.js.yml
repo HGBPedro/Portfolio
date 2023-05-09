@@ -32,7 +32,6 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-node-
 
-      - run: npm install
       - run: npm run build
 
       - name: Deploy
@@ -40,4 +39,4 @@ jobs:
         if: ${{ github.ref == 'refs/heads/main' }}
         with:
           deploy_key: ${{ secrets.ACTIONS_DEPLOY_KEY }}
-          publish_dir: ./public
+          publish_dir: public/build
