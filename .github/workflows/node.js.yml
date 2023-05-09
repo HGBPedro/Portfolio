@@ -43,5 +43,4 @@ jobs:
       with:
         deploy_key: ${{ secrets.ACTIONS_DEPLOY_KEY }}
         publish_dir: ./public/build
-        publish_branch: main
         external_repository: HGBPedro/hgbpedro.github.io
