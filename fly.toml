@@ -1,0 +1,10 @@
+# fly.toml app configuration file generated for hgbpedroportfolio on 2023-05-09T21:41:14-03:00
+#
+# See https://fly.io/docs/reference/configuration/ for information about how to use this file.
+#
+
+app = "hgbpedroportfolio"
+primary_region = "gru"
+
+[env]
+  PORT = "8080"
