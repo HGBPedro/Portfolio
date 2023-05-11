@@ -11,6 +11,7 @@
     overflow-x: hidden;
     padding: 0;
     scroll-behavior: smooth;
+    max-width: 100vw;
   }
 
   h1 {
@@ -28,6 +29,15 @@
 
   .animation {
     display: none;
+  }
+
+  .home, .projects, .about {
+    width: 100vw;
+    overflow-x: clip;
+  }
+
+  .home {
+    position: relative;
   }
 
   .home > aside {
@@ -59,12 +69,12 @@
   .home__big-triangle {
     background-color: var(--primary-color);
     bottom: 0;
-    clip-path: polygon(0% 100%, 100% 100%, 72.02% 0%);
     height: 6.5rem;
-    position: absolute;
     left: -26.5rem;
+    overflow: clip;
+    position: absolute;
     width: 61.4375rem;
-    z-index: -1;
+    z-index: 0;
   }
 
   .projects {
